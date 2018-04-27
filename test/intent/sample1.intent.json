@@ -1,8 +1,9 @@
 {
-  "utterance": "Give me details about Incident",
-  "intent_type": "Incident_details",
+  "utterance": "Incident Inc00012323",
+  "intent_type": "speak_back",
   "intent": {
-    "Incident": "Give me details about Incident",
-    "Details": "Inc00012345"
-  }
+    "Incident": "Incident",
+    "Words": "Inc00012323"
+  },
+  "expected_response": "Inc00012323"
 }

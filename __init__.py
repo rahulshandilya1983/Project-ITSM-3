@@ -30,8 +30,8 @@ __author__ = 'Rahul Kumar Shandilya'
 LOGGER = getLogger(__name__)
 
 
-class IncidentDetailSkill(MycroftSkill):
-    @intent_handler(IntentBuilder("").require("Incident").require("Details"))
+class SpeakSkill(MycroftSkill):
+    @intent_handler(IntentBuilder("").require("Speak").require("Words"))
     def speak_back(self, message):
         """
             Repeat the utterance back to the user.
@@ -40,7 +40,9 @@ class IncidentDetailSkill(MycroftSkill):
         """
         # Remove everything up to the speak keyword and repeat that
         utterance = message.data.get('utterance')
-        repeat = re.sub('^.*?' + message.data['Speak'], '', utterance)
+        print(utterance)
+        repeat = re.sub('^.*?' + message.data['Incident'], '', utterance)
+        print(repeat)
         self.speak(repeat.strip())
 
     def stop(self):
@@ -48,4 +50,4 @@ class IncidentDetailSkill(MycroftSkill):
 
 
 def create_skill():
-    return IncidentDetailSkill()
+    return SpeakSkill()
