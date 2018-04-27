@@ -31,7 +31,7 @@ LOGGER = getLogger(__name__)
 
 
 class SpeakSkill(MycroftSkill):
-    @intent_handler(IntentBuilder("").require("Speak").require("Words"))
+    @intent_handler(IntentBuilder("").require("Incident").require("Words"))
     def speak_back(self, message):
         """
             Repeat the utterance back to the user.
