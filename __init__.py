@@ -55,8 +55,9 @@ class ItsmUserSkill(MycroftSkill):
         # Decode the JSON response into a dictionary and use the data
         data = response.json()
         number = len(data['result'])
-        self.speak("You have a total of {}".format(number)+"Incidents assigned")
-        self.speak("Please type the Incident number to get detailed information")
+        #self.speak("You have a total of {}".format(number)+"Incidents assigned")
+        self.speak("Give me details about Incident")
+        self.speak(message)
         
 
     def stop(self):
